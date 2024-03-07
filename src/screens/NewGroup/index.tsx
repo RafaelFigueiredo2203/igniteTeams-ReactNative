@@ -1,9 +1,12 @@
 import { useNavigation } from '@react-navigation/native'
 import React, { useState } from 'react'
+import { Alert } from 'react-native'
 import { ButtonComponent } from '../../components/Button'
 import { Header } from '../../components/Header'
 import { Highlight } from '../../components/Highlight'
 import { InputComponent } from '../../components/Input'
+import { groupCreate } from '../../storage/group/groupCreate'
+import { AppError } from '../../utils/appError'
 import { Container, Content, Icon } from './styles'
 
 export function NewGroup() {
@@ -11,8 +14,22 @@ export function NewGroup() {
   
   const navigation = useNavigation();
 
-  function handleCreateNewGroup(){
-    navigation.navigate('players',{group})
+  async function handleCreateNewGroup(){
+    try{
+      if(group.trim().length === 0){
+        return Alert.alert('Novo Grupo','Informe o nome da turma')
+      }else{
+        await groupCreate(group)
+        navigation.navigate('players',{group})
+      }
+    }catch(error){ 
+      if (error instanceof AppError){
+        Alert.alert('Novo Grupo', error.message)
+      }else{
+        Alert.alert('Novo Grupo', 'Grupo já existe!')
+      }
+      console.log(error);
+    }
   }
 
   return (

@@ -1,15 +1,18 @@
-import { useNavigation } from '@react-navigation/native'
-import React, { useState } from 'react'
+import { useFocusEffect, useNavigation } from '@react-navigation/native'
+import React, { useCallback, useState } from 'react'
 import { FlatList } from 'react-native'
 import { ButtonComponent } from '../../components/Button'
 import { GroupCard } from '../../components/GroupCard'
 import { Header } from '../../components/Header'
 import { Highlight } from '../../components/Highlight'
 import { ListEmpty } from '../../components/ListEmpty'
+import { Loading } from '../../components/Loading'
+import { getAllGroups } from '../../storage/group/getAllGroups'
 import { Container } from './styles'
 
 
 export function Groups() {
+  const [isLoading, setIsLoading] = useState(true)
 
   const [groups, setGroups] = useState<string[]>([]);
   
@@ -19,6 +22,29 @@ export function Groups() {
     navigation.navigate('new');
   }
 
+  async function fetchGroups(){
+    try{
+      setIsLoading(true)
+      const data = await getAllGroups();
+      setGroups(data);
+
+      
+     
+    }catch(error){
+      console.log(error);
+    }finally{
+      setIsLoading(false)
+    }
+  }
+
+  function handleOpenGroup(group:string){
+    navigation.navigate('players', {group});
+  }
+
+  useFocusEffect(useCallback(() => {
+    fetchGroups();
+  },[]));
+
   return (
     <Container>
       <Header />
@@ -27,11 +53,15 @@ export function Groups() {
       subtitle='Jogue com sua turma'
       />
 
+      {
+        isLoading ? <Loading/> :
+      
       <FlatList
       data={groups}
       keyExtractor={item => item}
       renderItem={({item}) =>  (
       <GroupCard
+      onPress={() => handleOpenGroup(item)}
       title={item}
       />
       )}
@@ -41,7 +71,8 @@ export function Groups() {
          )}
          showsVerticalScrollIndicator={false}
       />
-
+      }
+      
       <ButtonComponent
       title='Criar nova turma'
       type='PRIMARY'
