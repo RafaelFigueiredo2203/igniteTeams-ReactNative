@@ -1,5 +1,6 @@
 
 <h1 align="center" >
+  Ignite Teams
 <img src="./src/assets/logo.png"/>
 </h1>
 
@@ -9,17 +10,11 @@
 
 <h1 align="center" >
 
-![image](https://github.com/RafaelFigueiredo2203/nlw-expert-react-native/assets/60237326/225d5797-e1b3-434d-a072-45ea36b198d6)
+![Turmas](https://github.com/RafaelFigueiredo2203/igniteTeams-ReactNative/assets/60237326/758cb41f-75cd-4a07-9a1e-1023b3683892)
 
+![Nova turma](https://github.com/RafaelFigueiredo2203/igniteTeams-ReactNative/assets/60237326/4394dd30-ea38-41f4-85fb-b40a77c8037c)
 
-![image](https://github.com/RafaelFigueiredo2203/nlw-expert-react-native/assets/60237326/1f975da6-bdf0-4268-8856-4286e3618418)
-
-
-![image](https://github.com/RafaelFigueiredo2203/nlw-expert-react-native/assets/60237326/a0d32421-4773-4639-976c-5d662a4fab35)
-
-
-
-
+![Times](https://github.com/RafaelFigueiredo2203/igniteTeams-ReactNative/assets/60237326/a91a881c-6c1d-4622-a116-e13395e8c54a)
 
 
 
