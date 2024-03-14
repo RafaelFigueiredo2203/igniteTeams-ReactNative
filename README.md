@@ -8,7 +8,7 @@
 
 <br>
 
-<h1 align="center" >
+<h1 align="center" display="flex" flexDirection="row" >
 
 ![Turmas](https://github.com/RafaelFigueiredo2203/igniteTeams-ReactNative/assets/60237326/758cb41f-75cd-4a07-9a1e-1023b3683892)
 
