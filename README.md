@@ -43,7 +43,7 @@ Organize suas equipes e seus times em uma aplicação com controle total nos par
 <br> <br>
 
 
-Foi desenvolvido utilizando React Native com Expo , utilizamos navegação com React-Navigation , reforcei os conhecimentos sobre manipulação do estado e propriedades , para manter os dados salvos no aplicativo como os times e participantes, utilizamos o AsyncStorage para armazenar as informações no storage do dispositivo do usuário , na estilização , utilizamos o Styled Components! ✅❤️
+Foi desenvolvido utilizando React Native com Expo , utilizamos navegação com React-Navigation , reforcei os conhecimentos sobre manipulação do estado e propriedades , para manter os dados salvos no aplicativo como os times e participantes, utilizamos o AsyncStorage ,armazenando as informações no storage do dispositivo do usuário , na estilização , utilizamos o Styled Components! ✅❤️
 <br> <br>
 
 Curti muito desenvolver esse projeto , pois aprendi e reforcei meus conhecimentos em React Native!
